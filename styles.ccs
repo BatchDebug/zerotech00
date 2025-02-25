@@ -1,0 +1,246 @@
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --text-color: #e0e0e0;
+    --light-text: #fff;
+    --background: #121212;
+    --card-bg: #1e1e1e;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    --youtube-color: #FF0000;
+    --kick-color: #53fc18;
+    --email-color: #4285F4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    100% {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+    }
+}
+
+.profile h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.profile p {
+    font-size: 16px;
+    color: var(--light-text);
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.link i, .link svg {
+    font-size: 24px;
+    margin-right: 16px;
+    z-index: 1;
+}
+
+.link .kick-icon {
+    color: var(--kick-color);
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 24px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.link span {
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.link .sub-info {
+    margin-left: auto;
+    font-size: 14px;
+    color: #888;
+    z-index: 1;
+}
+
+.youtube {
+    border-left: 4px solid var(--youtube-color);
+}
+
+.youtube i {
+    color: var(--youtube-color);
+}
+
+.kick {
+    border-left: 4px solid var(--kick-color);
+}
+
+.kick .kick-icon {
+    color: var(--kick-color);
+}
+
+.email {
+    border-left: 4px solid var(--email-color);
+}
+
+.email i {
+    color: var(--email-color);
+}
+
+.link:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.powered-by {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.powered-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.powered-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 15px;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .profile h1 {
+        font-size: 24px;
+    }
+    
+    .profile p {
+        font-size: 14px;
+    }
+    
+    .link {
+        padding: 14px 18px;
+    }
+    
+    .link i, .link svg {
+        font-size: 20px;
+    }
+    
+    .link span {
+        font-size: 16px;
+    }
+    
+    .link .sub-info {
+        font-size: 12px;
+        display: none;
+    }
+    
+    .powered-by {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .profile h1 {
+        font-size: 22px;
+    }
+    
+    .link {
+        padding: 12px 16px;
+    }
+}
